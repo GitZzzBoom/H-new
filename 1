@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div
+			{
+				width: 200px;
+				height: 200px;
+				border: 1px solid red;
+				margin-top: 2px;
+				display: none;
+			}
+		</style>
+		<script>
+			window.onload=function()
+			{
+				var inputs=document.getElementsByTagName('input');
+				var divs=document.querySelectorAll('div');
+				
+				//前一个点击的项目
+				var prve=inputs[0];
+				
+				for(var i=0;i<inputs.length;i++)
+				{	
+					
+					//设置一个自定义属性  使当前按钮找到对应div
+					inputs[i].index=i;
+					
+					inputs[i].onclick=function()
+					{
+						//让上一个按钮失去点击颜色
+						prve.style.background='';
+						
+						//让上一个div隐藏
+						divs[prve.index].style.display='none';
+						
+						//让当前点击的按钮变色
+						this.style.background='#808080';
+						
+						//让当前按钮对应的div显示
+						divs[this.index].style.display='block';
+						
+						//将上一个的值换成当前值
+						prve=this;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="按钮1" id="btn1" style="background: #808080;"/>
+		<input type="button" value="按钮2" id="btn2" />
+		<input type="button" value="按钮3" id="btn3" />
+		<div class="div1" style="display: block;">边框一</div>
+		<div class="div2">边框二</div>
+		<div class="div3">边框三</div>
+	</body>
+</html>
