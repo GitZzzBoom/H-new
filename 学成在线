@@ -9,7 +9,495 @@
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" href="favicon.ico" />
+    <style>
+    @font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?9jcial');
+    src:  url('../fonts/icomoon.eot?9jcial#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?9jcial') format('truetype'),
+      url('../fonts/icomoon.woff?9jcial') format('woff'),
+      url('../fonts/icomoon.svg?9jcial#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;   /*  css3 盒子模型 */
+}
+em,i{
+	font-style:normal;
+}
+li{
+	list-style:none;
+	cursor: pointer;
+}
+img{
+	border:0;
+	vertical-align:middle;
+}
+button{
+	cursor:pointer;
+}
+a{
+	color:#050505;
+	text-decoration:none;
+	cursor: pointer;
+}
+a:hover{
+	color:#00a4ff;
+}
+button,input{
+	font-family:Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+}
+body{
+	-webkit-font-smoothing:antialiased;
+	background-color:#fff;
+	font:12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+	color:#666;
+}
+.hide,.none{
+	display:none;
+}
+.clearfix:after{
+	visibility:hidden;
+	clear:both;
+	display:block;
+	content:".";
+	height:0;
+}.clearfix{
+	*zoom:1;
+}
+
+/* 版心 */
+.w {
+	width: 1200px;
+	margin: auto;
+}
+body{
+    background-color:  #f3f5f7;
+}
+header{
+    width: 1300px;
+    height: 100px;
+    /* background-color: pink; */
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.logo{
+    width: 195PX;
+    height: 42px;
+    float: left;
+}
+.logo a{
+    display: block;
+    width: 195PX;
+    height: 42px;
+    background:url(logo.png) no-repeat;
+    text-indent: -999px;
+    overflow: hidden;
+}
+header nav{
+    float: left;
+    margin-left: 20px;
+}
+nav li{
+    float: left;
+    height: 40;
+    line-height: 40px;
+    margin-left: 25px;
+}
+nav li a{
+    display: block;
+    height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+}
+nav li a:hover{
+    border-bottom: 2px solid #00a4ff;
+}
+.search{
+    float: left;
+    width: 411px;
+    height: 40px;
+    background-color: #0ff;
+    margin-left: 115px;
+}
+.search input{
+    width: 361px;
+    height: 40px;
+    outline: none;
+    float: left;
+    padding-left: 10px;
+}
+.search button{
+    width: 50px;
+    height: 40px;
+    border: 0;
+    outline: none;
+    background: #00a4ff;
+}
+.search button i{
+    font-family: 'icomoon';
+    font-weight: 400;
+}
+.personal{
+    float: right;
+    height: 40px;
+    line-height: 40px;
     
+}
+.personal dt,.personal dd{
+    float: left;
+}
+.personal s{
+    padding: 0 40px;
+    position: relative;
+}
+
+.personal s::before{
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    right: 30px;
+    top: 0px;
+}
+.personal span img {
+	border-radius: 50%;
+    margin-right: 10px;
+    transition: all 0.6s;
+}
+.personal span img:hover {
+	transform: rotate(-360deg);
+}
+.banner{
+    height: 420px;
+    background-color: #1c036c;
+}
+.inner{
+    height: 420px;
+    position: relative;
+}
+.subnav{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 190px;
+    background: rgba(0,0,0,.3);
+    padding-top: 10px;
+}
+.subnav li{
+    padding-left: 20px;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+}
+.subnav a{
+    font-size: 14px;
+    color: #fff;
+    display: block;
+}
+.subnav a:hover{
+    color: #00b4ff;
+}
+.subnav span{
+    font-family: "icomoon";
+    font-size: 16px;
+    line-height: 40px;
+    position: absolute;
+	right: 20px;
+	top: 0;
+}
+.circle{
+    width: 176px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    margin-left: -88px;
+    /* background-color: #fff; */
+}
+.circle i{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background:rgba(255,255,255,.4);
+    cursor: pointer;
+    border-radius: 6px;
+    margin: 0 5px;
+    transition: all 0.4s;
+}
+.circle i:hover{
+    width: 20px;
+    background-color: #fff;
+}
+
+.timetable{
+    width: 238px;
+    height: 300px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -150px;
+    background-color: #fff;
+}
+.timetable dt{
+    height: 50px;
+    background-color:  #9bceea;
+    font-weight: 700;
+    color: #fff;
+    line-height: 50px;
+    font-size: 18px;
+    text-align: center;
+}
+.timetable dd{
+    padding: 15px 20px 0px;
+}
+.timetable dd li{
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+    padding-top: 6px;
+}
+.timetable dd li:last-child{
+    border: 0px;
+}
+.timetable h5{
+    font-size: 16px;
+}
+.all{
+    height: 40px;
+    border: 1px solid  #22b0ff;
+    color:  #22b0ff;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+}
+.all:hover{
+    color: #fff;
+    background-color:  #22b0ff;
+}
+.recommend{
+    margin-top: 30px;
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0px 1px 12px rgba(0, 0, 0, .4);
+}
+.rec-l{
+    padding-left: 30px;
+    box-shadow: 0px 1px 12px rgba(0, 0, 0, .4);
+    
+}
+.rec-l strong{
+    color: #22b0ff;
+    font-size: 14px;
+    margin-right: 20px;
+}
+.rec-l a{
+    margin: 0 15px;
+    font-size: 14px;
+}
+.recommend em{
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+}
+.recommend em:hover {
+    color: #00a4ff;
+}
+.products{
+    margin-top: 40px;
+}
+.pro-hd
+{
+    height: 40px;
+    position: relative;
+}
+.pro-hd h4 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.pro-hd a {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+}
+.pro-hd a:hover {
+    color: #00a4ff;
+}
+.pro-bd
+{
+    margin-left: 10px;
+}
+.pro-bd li {
+    width: 228px;
+    height: 270px;
+    background-color: #fff;
+    float: left;
+    overflow: hidden;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    transition: all 0.4s;
+}
+.pro-bd li:hover{
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
+	transform: translateY(-10px);
+}
+.pro-bd img {
+    transition: all 0.4s;
+}
+.pro-bd li:hover img{
+    margin-left:-5px;
+}
+.pro-title
+{
+    width: 185px;
+    font-size: 14px;
+    color: #050505;
+    margin: 10px auto;
+    /* text-align: center; */
+}
+.pro-bd p {
+    width: 185px;
+    margin: 10px auto;
+}
+.pro-bd p span {
+    color:#ff7c2d;
+    font-weight: 700;
+}
+.programme
+{
+    margin-top: 20px;
+}
+.prog-hd{
+    height: 45px;   
+    position: relative;  
+}
+.prog-hd h4 {
+    font-size: 18px;
+    font-weight: 400;   /*400等同于normal*/
+    float: left;
+}
+.prog-hd ul
+{
+    position: absolute;
+    left: 50%;
+    margin-top: 2px;
+    margin-left: -160px;
+}
+.prog-hd li
+{
+    margin-right: 70px;
+    float: left;
+    font-size: 16px;
+    color: #868686
+}
+.prog-hd li:hover {
+    color:#00a4ff;
+}
+.prog-hd a
+{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.bd-left {
+    width: 228px;
+    height: 392px;
+    background:url('bd-left_03.png');
+    float: left;
+}
+.prog-bd a {
+    margin-left: 10px;
+}
+.bd-right ul
+{
+    float: left;
+    margin-top: 15px;
+}
+.bd-right li {
+    margin-left: 15px;
+    width: 227px;
+    height: 270px;
+    float: left;
+    background-color: #fff;
+    position: relative;
+    transition: all 0.4s;
+}
+.bd-right li:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
+	transform: translateY(-10px);
+}
+.prog-title {
+    width: 190px;
+    font-size: 16px;
+    margin: 20px auto 10px;
+} 
+.bd-right p {
+    width: 190px;
+    position: absolute;
+    left: 20px;
+    bottom: 15px;
+}
+
+.bd-right span {
+    color: #ff7c2d;
+}
+
+footer {
+    height: 280px;
+    background-color: #fff;
+    margin-top: 30px;
+    padding-top: 30px;
+}
+.footer-l {
+    margin-left: 20px;
+    float: left;
+}
+.footer-l p {
+    margin: 25px 0 15px 0;
+    line-height: 24px;
+}
+.footer-l a {
+    width: 220px;
+    height: 35px;
+    display: block;
+    border: 1px solid #22b0ff;
+    text-align: center;
+    line-height: 35px;
+    color: #22b0ff;
+}
+.footer-l a:hover {
+    text-decoration: underline;
+    color: #ff7c2d;
+}
+.footer-r {
+    float: right;
+}
+.footer-r dl
+{
+    float: left;
+    margin-left: 130px;
+}
+.footer-r dl dt {
+    font-size: 14px;
+    color: #333;
+    height: 30px;
+}
+.footer-r dd {
+    height: 20px;
+}
+    </style>
 </head>
 
 <body>
